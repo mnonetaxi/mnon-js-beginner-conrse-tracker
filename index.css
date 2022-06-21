@@ -69,3 +69,11 @@ h2 {
     margin-bottom: 10px;
     box-shadow: var(--box-shadow);
 }
+
+#transaction li .income-amt {
+    display: inline-block;
+    background-color: var(--box-shadow);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
