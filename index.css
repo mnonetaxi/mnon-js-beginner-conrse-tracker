@@ -1,5 +1,5 @@
 :root {
-    --drop-shadow: 0px 1px 4px 1px rgba(199,199,1);
+    --drop-shadow: 0px 1px 4px 1px rgba(199,199,1); 
     --income: green;
     --expense: red;
 }
@@ -49,4 +49,8 @@ h2 {
 
 #income {
     color: var(--income);
+}
+
+#expense {
+    color: var(--expense);
 }
