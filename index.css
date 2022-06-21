@@ -70,10 +70,17 @@ h2 {
     box-shadow: var(--box-shadow);
 }
 
-#transaction li .income-amt {
+#transaction li span {
     display: inline-block;
-    background-color: var(--box-shadow);
     color: white;
     padding: 5px;
     border-radius: 3px;
+}
+
+#transaction li .income-amt {
+    background-color: var(--box-shadow);
+}
+
+#transaction li .expense-amt {
+    background-color: var(--expense);
 }
