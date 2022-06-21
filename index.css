@@ -31,7 +31,11 @@ h2 {
     padding-top: 20px;
 }
 
-.expense-container {
+.income-container {
     border-right: 1px; solid #cccccc;
     padding: 20px;
+}
+
+.expense-container {
+    padding-left: 20px;
 }
