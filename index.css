@@ -24,4 +24,8 @@ h2 {
 
 .cashflow-container {
     display: flex;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
 }
