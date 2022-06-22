@@ -19,15 +19,20 @@ function init() {
     incomeEl.innerHTML = `$${state.income}`;
     expenseEl.innerHTML = `$${state.expense}`;
 
-    var transactionEl, containerEl;
+    var transactionEl, containerEl, amountEl, item;
 
     for (var i = 0; i < state.transactions.length; i++) {
+item = state.transactions[i];
         transactionEl = document.createElement('li');
-        transactionEl.append(state.transactions[i].name);
+        transactionEl.append(item.name);
 
         transactionsEl.appendChild(transactionEl);
 
         containerEl = document.createElement('div');
+        amountEl = document.createElement('span');
+        if (item.type === 'income') {
+            amountEl.classList.add('income-amt');
+        }
     }
 }
 
