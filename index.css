@@ -111,3 +111,7 @@ h2 {
     font-size: 1cm;
     text-transform: uppercase;
 }
+
+#incomeBtn {
+    background-color: var(--income);
+}
