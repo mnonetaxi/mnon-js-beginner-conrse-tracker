@@ -9,8 +9,10 @@ var state = {
     ]
 }
 
-function init() {
+var balanceEl = document.querySelector('#balance');
 
+function init() {
+    balanceEl.innerHTML = ``;
 }
 
 init();
