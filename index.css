@@ -17,7 +17,9 @@ body {
 }
 
 h2 {
+    font-size: 1.2cm;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .balance-container #balance {
@@ -59,6 +61,7 @@ h2 {
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 20px;
 }
 
 #transaction li {
