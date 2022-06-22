@@ -11,6 +11,7 @@ var state = {
 
 var balanceEl = document.querySelector('#balance');
 var incomeEl = document.querySelector('#income');
+var expenseEl = document.querySelector('#expense');
 
 function init() {
     balanceEl.innerHTML = `$${state.balance}`;
