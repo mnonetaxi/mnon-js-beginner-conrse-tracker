@@ -18,6 +18,15 @@ function init() {
     balanceEl.innerHTML = `$${state.balance}`;
     incomeEl.innerHTML = `$${state.income}`;
     expenseEl.innerHTML = `$${state.expense}`;
+
+    var transactionEl;
+
+    for (var i = 0; i < state.transactions.length; i++) {
+        transactionEl = document.createElement('li');
+        transactionEl.append(state.transactions[i].name);
+
+        transactionsEl.appendChild(transactionEl);
+    }
 }
 
 init();
