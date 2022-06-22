@@ -1,6 +1,6 @@
 var state = {
     balance: 100,
-    income: 1200,
+    income: 400,
     expense: 200,
     transactions: [
         { name: 'Salary', amount: 5000, type: 'income' },
@@ -14,6 +14,7 @@ var incomeEl = document.querySelector('#income');
 
 function init() {
     balanceEl.innerHTML = `$${state.balance}`;
+    incomeEl.innerHTML = `$${state.income}`;
 }
 
 init();
