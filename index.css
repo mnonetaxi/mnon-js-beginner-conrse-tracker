@@ -98,3 +98,8 @@ h2 {
 .form-container form label {
     padding: 10px;
 }
+
+.form-container form input {
+    height: 25px;
+    margin-bottom: 10px;
+}
