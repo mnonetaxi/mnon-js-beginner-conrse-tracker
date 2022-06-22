@@ -103,3 +103,11 @@ h2 {
     height: 25px;
     margin-bottom: 10px;
 }
+
+.form-container form button {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1cm;
+    text-transform: uppercase;
+}
