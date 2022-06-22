@@ -1,5 +1,5 @@
 var state = {
-    balance: 1000,
+    balance: 0,
     income: 1200,
     expense: 200,
     transactions: [
@@ -8,3 +8,9 @@ var state = {
         { name: 'Buy Guitar', amount: 500, type: 'expense' }
     ]
 }
+
+function init() {
+
+}
+
+init();
