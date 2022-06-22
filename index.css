@@ -110,8 +110,13 @@ h2 {
     margin-bottom: 10px;
     font-size: 1cm;
     text-transform: uppercase;
+    color: white;
 }
 
 #incomeBtn {
     background-color: var(--income);
+}
+
+#expenseBtn {
+    background-color: var(--expense);
 }
