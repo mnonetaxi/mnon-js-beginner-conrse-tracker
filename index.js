@@ -3,7 +3,7 @@ var state = {
     income: 400,
     expense: 100,
     transactions: [
-        { name: 'Salary', amount: 5000, type: 'income' },
+        { name: 'Salary', amount: 1000, type: 'income' },
         { name: 'Buy Grocery', amount: 50, type: 'expense' },
         { name: 'Buy Guitar', amount: 500, type: 'expense' }
     ]
@@ -15,7 +15,23 @@ var expenseEl = document.querySelector('#expense');
 var transactionsEl = document.querySelector('#transaction');
 
 function init() {
+    update5tate();
     render();
+}
+
+function update5tate() {
+    var balance = 0,
+    income = 0,
+    expense = 0,
+    item;
+
+    for (var i = 0; i < state.transactions.length; i++) {
+item = state.transactions[i];
+
+if (item.type === 'income') {
+income += item.amount;
+}
+    }
 }
 
 function render() {
