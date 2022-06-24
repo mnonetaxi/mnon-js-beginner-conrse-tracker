@@ -19,7 +19,7 @@ function init() {
     incomeEl.innerHTML = `$${state.income}`;
     expenseEl.innerHTML = `$${state.expense}`;
 
-    var transactionEl, containerEl, amountEl, item;
+    var transactionEl, containerEl, amountEl, item, btn;
 
     for (var i = 0; i < state.transactions.length; i++) {
         item = state.transactions[i];
@@ -37,9 +37,11 @@ function init() {
         }
         amountEl.innerHTML = `$${item.amount}`;
 
-        console.log(amountEl);
-
         containerEl.appendChild(amountEl);
+
+btnEl = document.createElement( 'button');
+
+        transactionEl.appendChild(containerEl);
     }
 }
 
