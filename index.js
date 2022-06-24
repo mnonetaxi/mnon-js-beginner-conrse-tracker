@@ -35,7 +35,11 @@ income += item.amount;
 }
     }
 
-    console.log(balance, income, expense);
+    balance = income - expense;
+
+    state.balance = balance;
+    state.income = income;
+    state.expense = expense;
 }
 
 function render() {
