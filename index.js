@@ -21,7 +21,6 @@ var amountInputEl = document.querySelector('#amount');
 function init() {
     update5tate();
     initListeners();
-    render();
 }
 
 function initListeners() {
@@ -36,7 +35,7 @@ function onAddIncomeClick() {
     };
 
     state.transactions.push(transaction);
-    
+
     update5tate();
 }
 
@@ -65,6 +64,8 @@ income += item.amount;
     state.balance = balance;
     state.income = income;
     state.expense = expense;
+
+    render();
 }
 
 function render() {
@@ -73,6 +74,8 @@ function render() {
     expenseEl.innerHTML = `$${state.expense}`;
 
     var transactionEl, containerEl, amountEl, item, btn;
+
+    transactionsEl.innerHTML = '';
 
     for (var i = 0; i < state.transactions.length; i++) {
         item = state.transactions[i];
