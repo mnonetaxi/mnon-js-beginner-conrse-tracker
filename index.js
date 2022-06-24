@@ -18,7 +18,12 @@ var expenseBtnEl = document.querySelector('#expenseBtn');
 
 function init() {
     update5tate();
+    initListeners();
     render();
+}
+
+function initListeners() {
+incomeBtnEl.addEventListener('click', onAddincomeClick);
 }
 
 function update5tate() {
