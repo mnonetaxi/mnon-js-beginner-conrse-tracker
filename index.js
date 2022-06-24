@@ -1,5 +1,5 @@
 var state = {
-    balance: 100,
+    balance: 1000,
     income: 400,
     expense: 100,
     transactions: [
@@ -15,6 +15,10 @@ var expenseEl = document.querySelector('#expense');
 var transactionsEl = document.querySelector('#transaction');
 
 function init() {
+    render();
+}
+
+function render() {
     balanceEl.innerHTML = `$${state.balance}`;
     incomeEl.innerHTML = `$${state.income}`;
     expenseEl.innerHTML = `$${state.expense}`;
