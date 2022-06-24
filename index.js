@@ -39,7 +39,10 @@ function init() {
 
         containerEl.appendChild(amountEl);
 
-btnEl = document.createElement( 'button');
+        btnEl = document.createElement( 'button');
+        btnEl.innerHTML = 'X';
+
+        containerEl.appendChild(btnEl);
 
         transactionEl.appendChild(containerEl);
     }
