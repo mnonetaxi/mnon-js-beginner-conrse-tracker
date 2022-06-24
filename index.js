@@ -15,6 +15,8 @@ var expenseEl = document.querySelector('#expense');
 var transactionsEl = document.querySelector('#transaction');
 var incomeBtnEl = document.querySelector('#incomeBtn');
 var expenseBtnEl = document.querySelector('#expenseBtn');
+var nameInputEl = document.querySelector('#name');
+var amountInputEl = document.querySelector('#amount');
 
 function init() {
     update5tate();
@@ -25,6 +27,14 @@ function init() {
 function initListeners() {
     incomeBtnEl.addEventListener('click', onAddIncomeClick);
     expenseBtnEl.addEventListener('click', onAddExpenseClick);
+}
+
+function onAddIncomeClick() {
+    console.log('income');
+}
+
+function onAddExpenseClick() {
+    console.log('expense');
 }
 
 function update5tate() {
