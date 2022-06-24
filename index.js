@@ -22,7 +22,7 @@ function init() {
     var transactionEl, containerEl, amountEl, item;
 
     for (var i = 0; i < state.transactions.length; i++) {
-item = state.transactions[i];
+        item = state.transactions[i];
         transactionEl = document.createElement('li');
         transactionEl.append(item.name);
 
@@ -35,6 +35,11 @@ item = state.transactions[i];
         } else if  (item.type === 'expense') {
             amountEl.classList.add('expense-amt');
         }
+        amountEl.innerHTML = `$${item.amount}`;
+
+        console.log(amountEl);
+
+        containerEl.appendChild(amountEl);
     }
 }
 
