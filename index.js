@@ -23,7 +23,8 @@ function init() {
 }
 
 function initListeners() {
-incomeBtnEl.addEventListener('click', onAddincomeClick);
+    incomeBtnEl.addEventListener('click', onAddIncomeClick);
+    expenseBtnEl.addEventListener('click', onAddExpenseClick);
 }
 
 function update5tate() {
