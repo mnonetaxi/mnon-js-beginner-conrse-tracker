@@ -30,7 +30,7 @@ function initListeners() {
 }
 
 function onAddIncomeClick() {
-    console.log('income');
+    console.log('income', nameInputEl.ariaValueMax, amountInputEl.value);
 }
 
 function onAddExpenseClick() {
