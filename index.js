@@ -13,6 +13,8 @@ var balanceEl = document.querySelector('#balance');
 var incomeEl = document.querySelector('#income');
 var expenseEl = document.querySelector('#expense');
 var transactionsEl = document.querySelector('#transaction');
+var incomeBtnEl = document.querySelector('#incomeBtn');
+var expenseBtnEl = document.querySelector('#expenseBtn');
 
 function init() {
     update5tate();
