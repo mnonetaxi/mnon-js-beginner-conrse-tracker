@@ -29,14 +29,20 @@ function initListeners() {
 }
 
 function onAddIncomeClick() {
-    var transaction =  { 
-        name: nameInputEl.value, 
-        amount: parseInt(amountInputEl.value), type: 'income' 
-    };
+    var name = nameInputEl.value;
+    var amount = amountInputEl.value;
+    if (name !== '' && amount !== '') {
+        var transaction =  { 
+            name: nameInputEl.value, 
+            amount: parseInt(amountInputEl.value), type: 'income' 
+        };
 
-    state.transactions.push(transaction);
+        state.transactions.push(transaction);
 
-    update5tate();
+        updateState();
+    } else {
+        alert('please enter valid data');
+    }
 }
 
 function onAddExpenseClick() {
