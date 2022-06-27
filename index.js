@@ -28,13 +28,20 @@ function initListeners() {
     expenseBtnEl.addEventListener('click', onAddExpenseClick);
 }
 
+// DRY - DO not repeat yourself
+
 function onAddIncomeClick() {
+addTransaction(nameInputEl.value, amountInputEl.value, 'income');
+}
+
+function addTransaction(name, amount, type) {
     var name = nameInputEl.value;
     var amount = amountInputEl.value;
     if (name !== '' && amount !== '') {
         var transaction =  { 
-            name: nameInputEl.value, 
-            amount: parseInt(amountInputEl.value), type: 'income' 
+            name: name, 
+            amount: parseInt(amount), 
+            type: type 
         };
 
         state.transactions.push(transaction);
@@ -42,7 +49,7 @@ function onAddIncomeClick() {
         updateState();
     } else {
         alert('please enter valid data');
-    }
+    } 
 }
 
 function onAddExpenseClick() {
