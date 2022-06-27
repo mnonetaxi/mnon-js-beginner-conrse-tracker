@@ -28,31 +28,7 @@ function initListeners() {
     expenseBtnEl.addEventListener('click', onAddExpenseClick);
 }
 
-// DRY - DO not repeat yourself
-
 function onAddIncomeClick() {
-addTransaction(nameInputEl.value, amountInputEl.value, 'income');
-}
-
-function addTransaction(name, amount, type) {
-    var name = nameInputEl.value;
-    var amount = amountInputEl.value;
-    if (name !== '' && amount !== '') {
-        var transaction =  { 
-            name: name, 
-            amount: parseInt(amount), 
-            type: type 
-        };
-
-        state.transactions.push(transaction);
-
-        updateState();
-    } else {
-        alert('please enter valid data');
-    } 
-}
-
-function onAddExpenseClick() {
     var name = nameInputEl.value;
     var amount = amountInputEl.value;
     if (name !== '' && amount !== '') {
@@ -69,7 +45,11 @@ function onAddExpenseClick() {
     }
 }
 
-function update5tate() {
+function onAddExpenseClick() {
+    console.log('expense');
+}
+
+function updateState() {
     var balance = 0,
     income = 0,
     expense = 0,
@@ -95,9 +75,9 @@ income += item.amount;
 }
 
 function render() {
-    balanceEl.innerHTML = `$${state.balance}`;
-    incomeEl.innerHTML = `$${state.income}`;
-    expenseEl.innerHTML = `$${state.expense}`;
+    balanceEl.innerHTML = `R${state.balance}`;
+    incomeEl.innerHTML = `R${state.income}`;
+    expenseEl.innerHTML = `R${state.expense}`;
 
     var transactionEl, containerEl, amountEl, item, btn;
 
