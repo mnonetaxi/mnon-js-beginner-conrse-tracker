@@ -46,7 +46,20 @@ function onAddIncomeClick() {
 }
 
 function onAddExpenseClick() {
-    console.log('expense');
+    var name = nameInputEl.value;
+    var amount = amountInputEl.value;
+    if (name !== '' && amount !== '') {
+        var transaction =  { 
+            name: nameInputEl.value, 
+            amount: parseInt(amountInputEl.value), type: 'income' 
+        };
+
+        state.transactions.push(transaction);
+
+        updateState();
+    } else {
+        alert('please enter valid data');
+    }
 }
 
 function update5tate() {
