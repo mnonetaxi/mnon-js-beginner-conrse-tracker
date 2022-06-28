@@ -126,10 +126,8 @@ h2 {
 
 #incomeBtn {
     background-color: var(--income);
-    cursor: pointer;
 }
 
 #expenseBtn {
     background-color: var(--expense);
-    cursor: pointer;
 }
