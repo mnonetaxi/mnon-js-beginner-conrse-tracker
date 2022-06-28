@@ -19,8 +19,19 @@ var nameInputEl = document.querySelector('#name');
 var amountInputEl = document.querySelector('#amount');
 
 function init() {
-    update5tate();
+    var localState = JSON.parse(localStorage.getItem('expenseTrackerState'));
+
+    if (localState !== null) {
+        state = localState;
+
+    }
+    updateState();
     initListeners();
+    // render
+}
+
+function uniqueId() {
+    return Math.round(Math.random() * 1000000);
 }
 
 function initListeners() {
@@ -28,48 +39,78 @@ function initListeners() {
     expenseBtnEl.addEventListener('click', onAddExpenseClick);
 }
 
+// DRY - DO not repeat yourself
+
 function onAddIncomeClick() {
+    addTransaction(nameInputEl.value, amountInputEl.value, 'income');
+}
+
+function onAddTransaction(name, amount, type) {
     var name = nameInputEl.value;
     var amount = amountInputEl.value;
+
     if (name !== '' && amount !== '') {
-        var transaction =  { 
-            name: nameInputEl.value, 
-            amount: parseInt(amountInputEl.value), type: 'income' 
-        };
+        // console.Log('income', nameInptEl.value, amountInputEl.value);
+        var transaction =  { id: uniqueId(), name: name, amount: parseInt(amount), type: type};
 
         state.transactions.push(transaction);
 
+        // console.Log(State);
         updateState();
+
     } else {
         alert('please enter valid data');
     }
+
+    nameInputEl.value = '';
+    amountInputEl.value = '';
+
 }
 
 function onAddExpenseClick() {
-    console.log('expense');
+    addTransaction(name.value, amountInputEl.value, 'expense');
+} 
+
+function onDeleteClick(event) {
+var id = parseInt(event.target.getAttribute('data-id'));
+var deleteIndex;
+for (let i = 0; i < state.transactions.length; i++)
+    if (state.transactions[i].id === id) {
+        deleteIndex = i;
+        break;
+    }
 }
+
+    state.transactions.splice(deleteIndex, 1);
+
+    updateState(); 
 
 function updateState() {
     var balance = 0,
-    income = 0,
-    expense = 0,
-    item;
+        income = 0,
+        expense = 0,
+        item;
 
     for (var i = 0; i < state.transactions.length; i++) {
     item = state.transactions[i];
 
 if (item.type === 'income') {
-income += item.amount;
-} else if (item.type === 'expense') {
+    income += item.amount;
+
+}
+    else if (item.type === 'expense') {
     expense += item.amount;
 }
     }
 
     balance = income - expense;
 
+    // console.Log(balance, income, expense);
     state.balance = balance;
     state.income = income;
     state.expense = expense;
+
+    localStorage.setItem('expensetrackerState', JSON.stringify(state));
 
     render();
 }
@@ -102,6 +143,7 @@ function render() {
         containerEl.appendChild(amountEl);
 
         btnEl = document.createElement( 'button');
+        btnEl.setAttribute('data-id', item.id);
         btnEl.innerHTML = 'X';
 
         containerEl.appendChild(btnEl);
